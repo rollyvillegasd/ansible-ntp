@@ -1,6 +1,7 @@
 # Instalación de Ansible y rol para instalar NTP
 
-
+### Arquitectura Ansible
+<img title="Ansible" alt="Alt text" src="/images/arq-ansible.jpg">
 
 ### Establecer el hostname a cada maquina virtual
 ```sh
@@ -14,7 +15,7 @@ sudo vi /etc/hosts
 
 127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4 test-kubmaster1.example.com
 ::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
-10.4.115.X test-kubmaster1.example.com test-kubmaster1
+10.0.0.X test-kubmaster1.example.com test-kubmaster1
 ```
 ### Instaalr Ansible en Nodo Management
 subscription-manager repos --enable rhel-7-server-ansible-2.6-rpms
@@ -22,7 +23,7 @@ yum install -y ansible
 ansible --version
 
 
-### creacion de usuarios en todos los nodos incluyendo 10.4.115.5
+### creacion de usuarios en todos los nodos incluyendo 10.0.0.5
 ```shell
 useradd ansible
 passwd ansible
@@ -44,25 +45,25 @@ visudo
 vi /etc/hosts
 ```
 ```text
-10.4.115.50  test-kubmaster1.example.com
-10.4.115.51  test-kubmaster2.example.com
-10.4.115.52  test-kubmaster3.example.com
-10.4.115.53  test-kubworker1.example.com
-10.4.115.54  test-kubworker2.example.com
-10.4.115.55  test-kubworker3.example.com
-10.4.115.56  test-kubworker4.example.com
-10.4.115.57  test-kubworker5.example.com
-10.4.115.58  test-kubworker6.example.com
+10.0.0.50  test-kubmaster1.example.com
+10.0.0.51  test-kubmaster2.example.com
+10.0.0.52  test-kubmaster3.example.com
+10.0.0.53  test-kubworker1.example.com
+10.0.0.54  test-kubworker2.example.com
+10.0.0.55  test-kubworker3.example.com
+10.0.0.56  test-kubworker4.example.com
+10.0.0.57  test-kubworker5.example.com
+10.0.0.58  test-kubworker6.example.com
 ```
 
-### Creando credenciales del usuario ansible en el servidor: 10.4.115.5
+### Creando credenciales del usuario ansible en el servidor: 10.0.0.5
 ```sh
 #usuario ansible logeado
 ssh-keygen
 #Ingresar por defecto ENTER
 #Ingresar por defecto ENTER
 
-#Hacerlo con los todos los VMs de master y workers
+#Hacerlo con los todos los servidores de master y workers
 ssh-copy-id ansible@test-kubmaster1.example.com
 #Ingresar la clave del usuario ansible
 ```
@@ -88,7 +89,7 @@ test-kubworker6.example.com
 [all:vars]
 ansible_connection=ssh
 ansible_ssh_user=ansible
-ansible_ssh_pass=simplEd17y
+ansible_ssh_pass=XXXXX
 ```
 ```sh
 sudo vi /etc/ansible/ansible.cfg
@@ -148,17 +149,7 @@ ansible-playbook --syntax-check install-netp.yml -v -K
 ansible-playbook install-ntp.yml -v -K
 ```
 
-### Versiones instaladas
-```sh
-
-```
-
-### Instalando HaProxy en el servidor 10.4.115.5
-```
-
-```
-
-Autores
+By
 -------
 - Rolly Villegas Delgado  -  vdrolly@gmail.com
 
