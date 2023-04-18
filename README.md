@@ -27,7 +27,7 @@ ansible --version
 ```shell
 useradd ansible
 passwd ansible
-#contrase�a: simplEd17y
+#contraseña: XXXXX
 
 usermod -aG wheel ansible
 su ansible -
@@ -142,10 +142,13 @@ test-kubmaster3.example.com | SUCCESS => {
 }
 ```
 
+# Verificar sintaxis del playbook y ejecutar
+```ssh
 #Para verificar syntaxis
 ansible-playbook --syntax-check install-netp.yml -v -K
-
-# Ejecutar
+```
+```ssh
+#Para ejecutar playbook
 ansible-playbook install-ntp.yml -v -K
 ```
 
