@@ -1,0 +1,22 @@
+---
+- name: Install yum ntp
+  yum:
+    name: ntp
+    state: latest
+  register: result
+  retries: 3
+  delay: 10
+  until: result is succeeded
+
+#- name: "enable ntp"
+#  service:
+#    name: ntp
+#    state: enable
+#  become: true
+
+- name: "start ntp"
+  service:
+    name: ntpd
+    state: started
+    enabled: true
+  become: true

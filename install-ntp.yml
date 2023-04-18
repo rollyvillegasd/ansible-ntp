@@ -1,0 +1,6 @@
+---
+- name: Install NTP on all hosts...
+  hosts: kubemaster:kubeworkers:docker
+  become: yes
+  roles:
+    - 01-install-ntp
