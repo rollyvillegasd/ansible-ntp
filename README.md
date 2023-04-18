@@ -151,7 +151,18 @@ ansible-playbook --syntax-check install-netp.yml -v -K
 #Para ejecutar playbook
 ansible-playbook install-ntp.yml -v -K
 ```
-
+```ssh
+PLAY RECAP ************************************************************************************************************
+nsrtm-test-master01.example.com : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+nsrtm-test-master02.example.com : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+nsrtm-test-master03.example.com : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+nsrtm-test-worker01.example.com : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+nsrtm-test-worker02.example.com : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+nsrtm-test-worker03.example.com : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+nsrtm-test-worker04.example.com : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+nsrtm-test-worker05.example.com : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+nsrtm-test-worker06.example.com : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+```
 By
 -------
 - Rolly Villegas Delgado  -  vdrolly@gmail.com
