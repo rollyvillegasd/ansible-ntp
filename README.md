@@ -146,7 +146,7 @@ test-kubmaster3.example.com | SUCCESS => {
 ### Verificar sintaxis del playbook y ejecutar
 ```ssh
 #Para verificar syntaxis
-ansible-playbook --syntax-check install-netp.yml -v -K
+ansible-playbook --syntax-check install-ntp.yml -v -K
 ```
 ```ssh
 #Para ejecutar playbook
