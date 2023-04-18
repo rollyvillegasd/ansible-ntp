@@ -3,7 +3,7 @@
 ### Arquitectura Ansible
 <img title="Ansible" alt="Alt text" src="/images/arq-ansible.jpg">
 
-### Establecer el hostname a cada maquina virtual
+### Establecer el hostname a cada maquina servidor
 ```sh
 hostnamectl   
 sudo hostnamectl set-hostname test-kubmaster1.example.com
@@ -17,13 +17,14 @@ sudo vi /etc/hosts
 ::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
 10.0.0.X test-kubmaster1.example.com test-kubmaster1
 ```
-### Instaalr Ansible en Nodo Management
+### Instalar Ansible en Nodo Management
+```sh
 subscription-manager repos --enable rhel-7-server-ansible-2.6-rpms
 yum install -y ansible
 ansible --version
+```
 
-
-### creacion de usuarios en todos los nodos incluyendo 10.0.0.5
+### creacion de usuarios en todos los nodos incluyendo Nodo Management
 ```shell
 useradd ansible
 passwd ansible
