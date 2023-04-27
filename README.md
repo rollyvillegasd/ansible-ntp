@@ -1,4 +1,4 @@
-# Instalación de Ansible y rol para instalar NTP
+# Config Ansible (Management & workers) y rol para instalar NTP
 
 ### Arquitectura Ansible
 <img title="Ansible" alt="Alt text" src="/images/arq-ansible.jpg">
@@ -46,18 +46,18 @@ visudo
 vi /etc/hosts
 ```
 ```text
-10.0.0.50  test-kubmaster1.example.com
-10.0.0.51  test-kubmaster2.example.com
-10.0.0.52  test-kubmaster3.example.com
-10.0.0.53  test-kubworker1.example.com
-10.0.0.54  test-kubworker2.example.com
-10.0.0.55  test-kubworker3.example.com
-10.0.0.56  test-kubworker4.example.com
-10.0.0.57  test-kubworker5.example.com
-10.0.0.58  test-kubworker6.example.com
+10.10.0.50  test-kubmaster1.example.com
+10.10.0.51  test-kubmaster2.example.com
+10.10.0.52  test-kubmaster3.example.com
+10.10.0.53  test-kubworker1.example.com
+10.10.0.54  test-kubworker2.example.com
+10.10.0.55  test-kubworker3.example.com
+10.10.0.56  test-kubworker4.example.com
+10.10.0.57  test-kubworker5.example.com
+10.10.0.58  test-kubworker6.example.com
 ```
 
-### Creando credenciales del usuario ansible en el servidor: 10.0.0.5
+### Creando credenciales del usuario ansible en el servidor: 10.10.0.50
 ```sh
 #usuario ansible logeado
 ssh-keygen
